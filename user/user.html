@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .pinkb {
+    background-color: #ff0278 !important;
+  }
+  body {
+    background-image: url(../assets/userbg.webp);
+    background-size: cover;
+    background-attachment:fixed ;
+  }
+  </style>  
+</head>
+<body class="container py-4">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+  <img src="../assets/Foodpanda-Logo.wine.png" width="200px" alt="Bootstrap" width="100%">
+</a>
+<form class="d-flex" role="search">
+  <input type="text" id="searchInput" class="form-control" placeholder="Search by Category"/>
+  <button class="btn btn-outline-success pinkb" type="submit">Search</button>
+</form>
+<button class="btn btn-outline-dark pinkb" onclick="logoutuser()">Log-out</button>
+<button class="btn btn-outline-primary position-relative">
+  <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+  <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    0
+  </span>
+</button>
+</div>
+</nav>
+
+  <h1 class="text-center">Food Menu</h1>
+
+
+  <div class="row" id="userItems"></div>
+
+  <script src="../javascript/user.js"></script>
+</body>
+</html>
+
