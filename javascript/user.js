@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const allItems = JSON.parse(localStorage.getItem("allItem")) || [];
   const container = document.getElementById("userItems");
   const searchInput = document.getElementById("searchInput");
-  let cartCount = 0; 
+  let cartCount = 0;
 
   function addToCart(index) {
     cartCount++;

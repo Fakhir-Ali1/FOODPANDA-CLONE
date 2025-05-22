@@ -1,6 +1,37 @@
 function logoutadmin() {
     location.href = "../index.html";
 }
+function loadCategories() {
+    const categories = JSON.parse(localStorage.getItem("categories")) || [];
+    const dropdown = document.getElementById("addCategory");
+    dropdown.innerHTML = ""; 
+    categories.forEach(cat => {
+        const opt = document.createElement("option");
+        opt.value = cat;
+        opt.textContent = cat;
+        dropdown.appendChild(opt);
+    });
+}
+
+document.getElementById("addCategoryBtn").addEventListener("click", () => {
+    const newCat = document.getElementById("newCategoryInput").value.trim();
+    if (!newCat) return;
+
+    let categories = JSON.parse(localStorage.getItem("categories")) || [];
+
+    if (!categories.includes(newCat)) {
+        categories.push(newCat);
+        localStorage.setItem("categories", JSON.stringify(categories));
+        loadCategories();
+    }
+
+    document.getElementById("addCategory").value = newCat;
+    document.getElementById("newCategoryInput").value = "";
+});
+document.getElementById("addModal").addEventListener("shown.bs.modal", loadCategories);
+
+document.addEventListener("DOMContentLoaded", loadCategories);
+
 document.addEventListener('DOMContentLoaded', function () {
     const userKeys = ["BBQ", "STARTER", "chinese"];
     const keySelect = document.getElementById("addCategory");

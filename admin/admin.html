@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" />
-    <style>
+  <style>
     .navbar {
       background-color: rgba(245, 239, 242, 0.5) !important;
     }
+
     .pinkb {
       background-color: #ff0278 !important;
     }
+
     body {
       background-color: #f784ba;
       background-image: url(../assets/c3d25af5ff7590fa99f9758a8033e8ba_fgraphic.png);
       background-size: cover;
-      background-attachment:fixed ;
+      background-attachment: fixed;
     }
-     .card-img-top{
-            /* display: block;\y */
-            /* width:250px */
-            height: 200px;
-            object-fit: cover;
-            
-        }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+
+    }
   </style>
 </head>
+
 <body>
-      <nav class="navbar bg-body-tertiary">
+  <nav class="navbar bg-body-tertiary">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="../assets/Foodpanda-Logo.wine.png" width="200px" alt="Bootstrap" width="100%">
       </a>
-      <h3>Restaurant Deshboard</h3>
+      <h3>Restaurant Dashboard</h3>
       <div class="d-grid gap-2 d-md-block">
         <button class="btn btn-primary pinkb" data-bs-toggle="modal" data-bs-target="#addModal">+Add Item</button>
         <button class="btn btn-outline-dark" onclick="logoutadmin()">Log-out</button>
-    </div>
+      </div>
     </div>
   </nav>
-     <div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="addForm">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add New Item</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <select class="form-select mb-3" id="addCategory" required>
-                            <option value="">-- Select Category --</option>
-                        </select>
-                        <input type="text" class="form-control mb-3" id="addname" placeholder="Name"  />
-                        <!-- <input type="text" class="form-control mb-3" id="addcategory" placeholder="Category"  /> -->
-                        <input type="text" class="form-control mb-3" id="addCaption" placeholder="Caption"  />
-                        <input type="number" class="form-control mb-3" id="addPrice" placeholder="Price"  />
-                        <input type="file" class="form-control" id="addImage" accept="image/*"  />
-                        <!-- <button type="button" onclick="delet()" class="btn btn-primary">Deshboard</button>
-                        <button type="button" onclick="edit()" class="btn btn-primary">Deshboard</button> -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Add Item</button>
-                    </div>
-                </form>
+  <div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="addForm">
+          <div class="modal-header">
+            <h5 class="modal-title">Add New Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3 d-flex">
+              <input type="text" id="newCategoryInput" class="form-control me-2" placeholder="Enter new category">
+              <button type="button" class="btn btn-primary" id="addCategoryBtn">Add Category</button>
             </div>
-        </div>
+            <select class="form-select mb-3" id="addCategory" required>
+              <option value="">-- Select Category --</option>
+            </select>
+            <input type="text" class="form-control mb-3" id="addname" placeholder="Name" />
+            <input type="text" class="form-control mb-3" id="addCaption" placeholder="Caption" />
+            <input type="number" class="form-control mb-3" id="addPrice" placeholder="Price" />
+            <input type="file" class="form-control" id="addImage" accept="image/*" />
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>
+        </form>
+      </div>
     </div>
-<div class="row mt-4" id="itemsContainer"></div>
+  </div>
+
+  <div class="row mt-4" id="itemsContainer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../javascript/admin.js"></script>
+  <script src="../javascript/admin.js"></script>
 </body>
+
 </html>

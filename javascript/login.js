@@ -54,7 +54,6 @@ document.getElementById("adminSignupForm").addEventListener("submit", function (
 });
 document.getElementById("adminLoginForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    // let name = document.getElementById()
     let email = document.getElementById("resloginEmail").value;
     let pass = document.getElementById("resloginPassword").value;
     let match = adminArr.find(u => u.email === email && u.password === pass);
